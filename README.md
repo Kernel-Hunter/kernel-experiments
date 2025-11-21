@@ -1,87 +1,41 @@
-<div align="center">
-  
-# Hey there — I'm Karim (Kernel‑Hunter) 👋
+# kernel-experiments
 
-</div>
+Kernel-experiments is a lightweight project with example kernel code, helper user-space tools, pentest automation helpers and docs — intended as a safe, well-documented starting point for kernel/module exploration and security tooling.
 
-<table>
-<tr>
-<td style="width: 32%; vertical-align: top;">
+Warning: kernel modules run in kernel space. Only build/load these on test machines or VMs you control. Do not run on production hosts.
 
-***Karim Masmoudi — 20, software engineering & AI enthusiast from Tunisia.***  
-Systems & security tinkerer, kernel explorer, ethical hacker, and creative maker.
+Features
+- hello_kmod: small example Linux kernel module (proc entry) with simple user-space test program
+- Makefile to build the module
+- scripts to build/install/uninstall the module
+- pentest helper (Python) to run and summarize nmap scans
+- CI configuration for static checks (flake8, shellcheck)
 
----
+Quick start (on a Linux development VM with kernel headers)
+1. Clone repo:
+   git clone https://github.com/<your-username>/kernel-experiments.git
+2. Build module:
+   cd kernel-experiments/kernel
+   make
+3. Install:
+   sudo ./build_and_install.sh
+4. Read proc entry:
+   cat /proc/hello_kmod
+5. Cleanup:
+   sudo ./uninstall.sh
 
-About me
-- Cybersecurity, penetration testing & security analysis (Kali toolset, risk management)  
-- Advanced Linux & kernel experimentation  
-- AI‑driven software engineering, AR/VR game systems  
-- Embedded & hardware projects: LED syncs, smart automation, hydroponics  
-- Music: qanun & percussion
+Repository layout
+- kernel/hello_kmod.c — kernel module
+- kernel/Makefile — build rules
+- userspace/test_read.c — small C program to read the proc file
+- scripts/*.sh — helpers to build/install/uninstall and run tests
+- tools/pentest_helper.py — small Python wrapper to run nmap and summarize results
+- docs/ARCHITECTURE.md — high-level notes and safety
+- .github/workflows/ci.yml — static checks CI
 
----
+Contributing
+See CONTRIBUTING.md. Please use VMs and test environments for kernel work.
 
-Languages & hands‑on skills (manual)
-- C — kernel & low‑level systems programming  
-- Java — applications & tooling  
-- Python — scripting, automation, AI tooling  
-- Linux shell scripting — Bash, utilities & automation  
-- Ethical hacking toolset — Nmap, Metasploit, Burp Suite, Wireshark, other Kali tools
-
-Curated language badges:
-<img src="https://img.shields.io/badge/C-555555?style=for-the-badge&logo=c&logoColor=white" alt="C"/> <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" alt="Java"/> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/> <img src="https://img.shields.io/badge/Shell-121011?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Shell"/> <img src="https://img.shields.io/badge/Ethical--Hacking-cc0000?style=for-the-badge&logo=metasploit&logoColor=white" alt="Ethical Hacking"/>
-
----
-
-Main tech icons:
-
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C" width="34" height="34" />
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original-wordmark.svg" alt="Java" width="34" height="34" />
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original-wordmark.svg" alt="Python" width="34" height="34" />
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="Linux" width="34" height="34" />
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-original.svg" alt="Bash" width="34" height="34" />
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" width="34" height="34" />
-
----
-
-Certifications & events:
-[![Harvard Cybersecurity](https://img.shields.io/badge/Certificate-Harvard%20Cybersecurity-blue?logo=harvard)](replace-with-cert-link)  
-[![edX Game Dev](https://img.shields.io/badge/Certificate-edX%20Game%20Dev-red?logo=edx)](replace-with-cert-link)
-
-</td>
-<td style="width: 68%; vertical-align: top;">
-
-#### 🏆 Achievements & GitHub Overview
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=Kernel-Hunter&theme=gruvbox&column=4&no-frame=true)](https://github.com/Kernel-Hunter)
-
-<img height="170" align="left" src="https://github-readme-stats.vercel.app/api?username=Kernel-Hunter&show_icons=true&count_private=true" />
-
----
-
-#### 🔭 Currently
-- Kernel module experiments & sandboxing ideas  
-- Building AI tooling for security automation  
-- AR/VR game mechanics & LED‑synced installations
-
-#### 📌 Pinned projects
-- [kernel-experiments](https://github.com/Kernel-Hunter/kernel-experiments) — OS/kernel prototypes & writeups  
-- [security-tools](https://github.com/Kernel-Hunter/security-tools) — pentest automation & Kali scripts  
-- [led-sync](https://github.com/Kernel-Hunter/led-sync) — LED controller & synchronized show patterns
-
-(If repo names differ, tell me and I'll update the links.)
-
----
-
-#### 📫 Contact & Links
-- Email: replace-with-your-email@example.com  
-- Website: https://your-site.example.com  
-- Twitter / Mastodon: @yourhandle  
-- LinkedIn: https://linkedin.com/in/yourprofile
-
-If you like low‑level systems, security tooling, or creative hardware + music mashups — star a repo and say hi!
-</td>
-</tr>
-</table>
+License
+MIT — see LICENSE
 ```
