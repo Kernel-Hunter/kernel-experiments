@@ -36,6 +36,3 @@ Repository layout
 Contributing
 See CONTRIBUTING.md. Please use VMs and test environments for kernel work.
 
-License
-MIT - see LICENSE
-```
