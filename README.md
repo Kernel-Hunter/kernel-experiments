@@ -1,4 +1,3 @@
-markdown
 <div align="center">
   
 # Hey there — I'm Karim (Kernel‑Hunter) 👋
